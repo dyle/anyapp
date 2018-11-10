@@ -74,7 +74,8 @@ bool parseCommandLine(boost::program_options::variables_map & programOptions, in
     commandLineOptions.add(arguments);
 
     try {
-        boost::program_options::command_line_parser parser{argc, reinterpret_cast<char const * const *>(argv)};
+        auto constArgv = reinterpret_cast<char const * const *>(argv);
+        boost::program_options::command_line_parser parser{argc, constArgv};
         boost::program_options::store(
                 parser.options(commandLineOptions).positional(positionalArgumentDescriptions).run(),
                 programOptions);
