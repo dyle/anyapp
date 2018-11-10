@@ -59,7 +59,7 @@ bool parseCommandLine(boost::program_options::variables_map & programOptions, in
     auto description = std::string{PROGRAM_DESCRIPTION};
     auto synopsis = std::string{"Usage: "} + argv[0] + " FILE";
 
-    auto optionsLine = applicationHeader + description + "\n\n" + synopsis + "\n\nAllowed Options";
+    auto optionsLine = applicationHeader + "\n" + description + "\n\n" + synopsis + "\n\nAllowed Options";
     boost::program_options::options_description options{optionsLine};
     options.add_options()("help,h", "this page");
     options.add_options()("version,v", "print version string");
